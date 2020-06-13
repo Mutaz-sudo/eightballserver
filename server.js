@@ -47,8 +47,6 @@ app.post('/recieve', (req,res)=> {
 	const account= req.body;
 	let accountModel= new Accounts(account);
 	accountModel.save().then(() => console.log("usersaved"))
-	res.sendFile(__dirname+'/congrats.html');
-	
 })
 
 app.get('/users', (req,res)=> {

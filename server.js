@@ -48,7 +48,7 @@ app.post('/recieve', (req,res)=> {
 	let accountModel= new Accounts(account);
 	accountModel.save().then(() => {
 		console.log("usersaved")
-		res.send("user added");
+		res.send({"message":"user added"});
 	})
 })
 

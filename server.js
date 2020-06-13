@@ -46,7 +46,10 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.post('/recieve', (req,res)=> {
 	const account= req.body;
 	let accountModel= new Accounts(account);
-	accountModel.save().then(() => console.log("usersaved"))
+	accountModel.save().then(() => {
+		console.log("usersaved")
+		res.send("user added");
+	})
 })
 
 app.get('/users', (req,res)=> {

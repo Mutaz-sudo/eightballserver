@@ -1,7 +1,7 @@
 const express= require('express');
 var cors = require('cors')
-var favicon = require('serve-favicon');
-const path = require('path');
+// var favicon = require('serve-favicon');
+// const path = require('path');
 const mongoose = require('mongoose');
 const url = "mongodb://mutaz:ammar1234@ds163870.mlab.com:63870/todolist";
 var bodyParser = require('body-parser');
@@ -27,21 +27,21 @@ var app= express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended':'false'}));
-app.use(express.static(path.join(__dirname, '/')));
-app.use(favicon(__dirname + '/favicon.png'));
+// app.use(express.static(path.join(__dirname, '/')));
+// app.use(favicon(__dirname + '/favicon.png'));
 
 
-app.get('/',(req,res) => {
-	res.sendFile('index.html');
-})
+// app.get('/',(req,res) => {
+// 	res.sendFile('index.html');
+// })
 
-app.get('/accounts',(req,res) => {
-	res.sendFile(__dirname+'/accounts.html');
-})
+// app.get('/accounts',(req,res) => {
+// 	res.sendFile(__dirname+'/accounts.html');
+// })
 
-app.get('/congrats',(req,res) => {
-	res.sendFile(__dirname+'/congrats.html');
-})
+// app.get('/congrats',(req,res) => {
+// 	res.sendFile(__dirname+'/congrats.html');
+// })
 
 app.post('/recieve', (req,res)=> {
 	const account= req.body;
